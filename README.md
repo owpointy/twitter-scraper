@@ -11,3 +11,19 @@ Outputs a Word file in a folder marked "output" under _internal that looks like 
 ![folder_two](https://i.imgur.com/Ajz05cO.png)
 
 ![output](https://i.imgur.com/ESNyGvC.png)
+
+__INSTALLATION ON WINDOWS__
+(1) Install Mozilla Firefox
+(2) Extract zip file
+(3) Run executable
+
+__INSTALLATION ON MAC__
+(1) Install Mozilla Firefox
+(2) Open Terminal
+(3) Type: 
+
+  open /usr/local/bin/
+
+(4) Extract zip file
+(5) Drag and drop file titled "geckodriver" into the folder that just opened
+(5) Run
