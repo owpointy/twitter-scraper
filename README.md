@@ -34,4 +34,4 @@ __INSTALLATION ON MAC__
 
 (5) Drag and drop file titled "geckodriver" into the folder that just opened
 
-(5) Run
+(5) Run executable
