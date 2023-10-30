@@ -7,6 +7,7 @@ Extremely basic tool I made to compile Twitter information faster. Copy and past
 Outputs a Word file in a folder marked "output" under _internal that looks like this:
 
 ![folder](https://i.imgur.com/yE9FzOX.png)
-![folder2](https://imgur.com/Ajz05cO](https://i.imgur.com/Ajz05cO.png)
+
+![folder_two](https://i.imgur.com/Ajz05cO.png)
 
 ![output](https://i.imgur.com/ESNyGvC.png)
