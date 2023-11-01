@@ -18,7 +18,7 @@ month_to_number = {
 
 data_list = []
 
-gecko_driver_path = '/usr/local/bin/geckodriverx'
+gecko_driver_path = '/usr/local/bin/geckodriver'
 
 
 def archive_url(saved_url):
