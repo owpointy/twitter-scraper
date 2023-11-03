@@ -40,6 +40,6 @@ __INSTALLATION ON MAC__
 
 (5) Once installation is complete, pink text saying "Installation complete!" should appear in the terminal
 
-It is possible that you will be asked to install developer tools. If so, allow, and download.
+It is possible that you will be asked to install developer tools. If so, allow, and download. Once everything is finished installing:
 
 (6) Click on "Twitter Scraper" to run program 
