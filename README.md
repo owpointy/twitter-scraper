@@ -26,11 +26,11 @@ __INSTALLATION ON MAC__
 
 (2) Sorry, you'll now have to use the terminal. Copy and paste the following instructions:
 
-  cd downloads
+    cd downloads
   
-  cd app
+    cd app
 
-  xattr -dr com.apple.quarantine INSTALL_APP.app
+    xattr -dr com.apple.quarantine INSTALL_APP.app
 
 (3) Right click (control-click) on the application marked "INSTALL"
 
