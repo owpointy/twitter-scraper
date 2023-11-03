@@ -24,7 +24,7 @@ __INSTALLATION ON MAC__
 
 (1)  Extract zip file
 
-(2) Sorry, you'll now have to use the terminal. Copy and paste the following instructions:
+(2) Sorry, you'll now have to use the terminal. Copy and paste the following instructions one by one:
 
     cd downloads
 
