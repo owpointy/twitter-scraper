@@ -34,7 +34,7 @@ __INSTALLATION ON MAC__
 
     xattr -dr com.apple.quarantine INSTALL_APP.app
 
-(3) Right click (control-click) on the application marked "INSTALL"
+(3) Right click (control-click) on the application marked "INSTALL_APP". You'll need to open it twice. Ignore the warnings - it's my file!
 
 (4) Lots of text will run through the terminal window. It may say that there are warnings. There's nothing to worry about - my script is not messing with anything important. Allow all the popups that come up. 
 
