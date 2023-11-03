@@ -24,15 +24,7 @@ __INSTALLATION ON MAC__
 
 (1)  Extract zip file
 
-(2) Sorry, you'll now have to use the terminal. Copy and paste the following instructions one by one:
-
-    cd downloads
-
-  
-    cd app
-
-
-    xattr -dr com.apple.quarantine INSTALL_APP.app
+(2) Run the app marked "RUN ME FIRST". This will open a terminal window. Feel free to close it afterwards.
 
 (3) Right click (control-click) on the application marked "INSTALL_APP". You'll need to open it twice. Ignore the warnings - it's my file!
 
