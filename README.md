@@ -24,12 +24,22 @@ __INSTALLATION ON MAC__
 
 (1)  Extract zip file
 
-(2) Right click (control-click) on the application marked "INSTALL"
+(2) Sorry, you'll now have to use the terminal. Copy and paste the following instructions one by one:
 
-(3) Lots of text will run through the terminal window. It may say that there are warnings. There's nothing to worry about - my script is not messing with anything important. Allow all the popups that come up. 
+    cd downloads
 
-(4) Once installation is complete, pink text saying "Installation complete!" should appear in the terminal
+  
+    cd app
+
+
+    xattr -dr com.apple.quarantine INSTALL_APP.app
+
+(3) Right click (control-click) on the application marked "INSTALL"
+
+(4) Lots of text will run through the terminal window. It may say that there are warnings. There's nothing to worry about - my script is not messing with anything important. Allow all the popups that come up. 
+
+(5) Once installation is complete, pink text saying "Installation complete!" should appear in the terminal
 
 It is possible that you will be asked to install developer tools. If so, allow, and download.
 
-(5) Click on "Twitter Scraper" to run program 
+(6) Click on "Twitter Scraper" to run program 
