@@ -24,7 +24,7 @@ __INSTALLATION ON MAC__
 
 (1)  Extract zip file
 
-(2) Run the app marked "RUN ME FIRST"
+(2) Run the app marked "RUN ME FIRST". This will open a terminal window. Feel free to close it afterwards.
 
 (3) Right click (control-click) on the application marked "INSTALL_APP". You'll need to open it twice. Ignore the warnings - it's my file!
 
