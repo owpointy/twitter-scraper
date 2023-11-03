@@ -34,12 +34,12 @@ __INSTALLATION ON MAC__
 
     xattr -dr com.apple.quarantine INSTALL_APP.app
 
-(3) Right click (control-click) on the application marked "INSTALL"
+(3) Right click (control-click) on the application marked "INSTALL_APP". You'll need to open it twice. Ignore the warnings - it's my file!
 
 (4) Lots of text will run through the terminal window. It may say that there are warnings. There's nothing to worry about - my script is not messing with anything important. Allow all the popups that come up. 
 
 (5) Once installation is complete, pink text saying "Installation complete!" should appear in the terminal
 
-It is possible that you will be asked to install developer tools. If so, allow, and download.
+It is possible that you will be asked to install developer tools. If so, allow, and download. Once everything is finished installing:
 
 (6) Click on "Twitter Scraper" to run program 
