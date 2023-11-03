@@ -22,16 +22,14 @@ __INSTALLATION ON WINDOWS__
 
 __INSTALLATION ON MAC__
 
-(1) Install Mozilla Firefox
+(1)  Extract zip file
 
-(2) Open Terminal
+(2) Right click (control-click) on the application marked "INSTALL"
 
-(3) Type: 
+(3) Lots of text will run through the terminal window. It may say that there are warnings. There's nothing to worry about - my script is not messing with anything important. Allow all the popups that come up. 
 
-    open /usr/local/bin/
+(4) Once installation is complete, pink text saying "Installation complete!" should appear in the terminal
 
-(4) Extract zip file
+It is possible that you will be asked to install developer tools. If so, allow, and download.
 
-(5) Drag and drop file titled "geckodriver" into the folder that just opened
-
-(6) Run executable
+(5) Click on "Twitter Scraper" to run program 
