@@ -210,7 +210,7 @@ print("Data List:", data_list)
 write_data = format_tweets(data_list)
 
 # Prompt the user for the subject name and date
-subject_name_and_date = open_input_box("Subject name & Date", "Taji Mustafa Oct 8")
+subject_name_and_date = open_input_box("Subject name & Date", "Subject name & Date")
 file_name = subject_name_and_date + '.docx'
 
 # Create the Word document

@@ -187,27 +187,38 @@ root = tk.Tk()
 root.title("Data Entry")
 tweet_entry_label = tk.Label(root, text="Paste tweet content and user name")
 tweet_entry_label.pack()
+
 tweet_entry = tk.Entry(root, width=40)
 tweet_entry.pack()
+
 url_entry_label = tk.Label(root, text="Enter URL (optional)")
 url_entry_label.pack()
+
 url_entry = tk.Entry(root, width=40)
 url_entry.pack()
+
 alternative_format_label = tk.Label(root, text="Comment (optional)")
 alternative_format_label.pack()
+
 alternative_format_entry = tk.Entry(root, width=40)
 alternative_format_entry.pack()
 
+# Place the checkboxes side by side, below the text entry fields
+checkbox_frame = tk.Frame(root)
+checkbox_frame.pack()
+
 like_checkbox_var = tk.IntVar()
-like_checkbox = tk.Checkbutton(root, text="Like?", variable=like_checkbox_var)
-like_checkbox.pack()
+like_checkbox = tk.Checkbutton(checkbox_frame, text="Like?", variable=like_checkbox_var)
+like_checkbox.pack(side=tk.LEFT)
 
 retweet_checkbox_var = tk.IntVar()
-retweet_checkbox = tk.Checkbutton(root, text="Retweet?", variable=retweet_checkbox_var)
-retweet_checkbox.pack()
+retweet_checkbox = tk.Checkbutton(checkbox_frame, text="Retweet?", variable=retweet_checkbox_var)
+retweet_checkbox.pack(side=tk.LEFT)
 
+# "Add Tweet" button placed below the checkboxes
 add_tweet_button = tk.Button(root, text="Add Tweet", command=add_tweet)
 add_tweet_button.pack()
+
 
 double_click_label = tk.Label(root, text="Double click to remove entry")
 double_click_label.pack()
@@ -229,7 +240,7 @@ print("Data List:", data_list)
 write_data = format_tweets(data_list)
 
 # Prompt the user for the subject name and date
-subject_name_and_date = open_input_box("Subject name & Date", "Taji Mustafa Oct 8")
+subject_name_and_date = open_input_box("Subject name & date", "Subject name & date")
 file_name = subject_name_and_date + '.docx'
 
 # Create the Word document
