@@ -76,15 +76,19 @@ def save_document(doc, filename):
 
 def add_tweet():
     tweet = tweet_entry.get()
-    url = url_entry.get()  # Get the URL input
-    alternative_format = alternative_format_entry.get()  # Get the alternative format input
+    url = url_entry.get()
+    alternative_format = alternative_format_entry.get()
+    is_liked = like_checkbox_var.get()
+    is_retweeted = retweet_checkbox_var.get()
+
     if tweet:
-        # Remove newlines from the tweet
         tweet = tweet.replace('\n', ' ')
-        data_list.append((tweet, url, alternative_format))  # Store the data with input order
+        data_list.append((tweet, url, alternative_format, is_liked, is_retweeted))
         tweet_entry.delete(0, tk.END)
-        url_entry.delete(0, tk.END)  # Clear the URL input field
-        alternative_format_entry.delete(0, tk.END)  # Clear the alternative format input field
+        url_entry.delete(0, tk.END)
+        alternative_format_entry.delete(0, tk.END)
+        like_checkbox.deselect()
+        retweet_checkbox.deselect()
         update_tweet_list()
 
 def delete_selected_item(event):
@@ -99,7 +103,8 @@ def delete_selected_item(event):
 def update_tweet_list():
     tweet_listbox.delete(0, tk.END)
     for i, data in enumerate(data_list):
-        tweet_listbox.insert(tk.END, f"Text: {data[0]}")
+        tweet_listbox.insert(tk.END, f"Text: {data[0]} {'[LIKED TWEET]' if data[3] else ''} {'[RETWEET]' if data[4] else ''}")
+
 
 def done():
     root.destroy()
@@ -136,44 +141,48 @@ def format_tweets(data_list):
     formatted_tweets = []
 
     for data in data_list:
-        tweet, url, alternative_format = data
-        # Check if the data matches the new format
+        tweet, url, alternative_format, is_liked, is_retweeted = data
+
         if re.match(r'(.+?) @(.+?) · (\w+ \d+) (.+)', tweet):
-            # Extract date, author, and full text using regular expressions
             match = re.match(r'(.+?) @(.+?) · (\w+ \d+) (.+)', tweet)
             if match:
                 author, date, full_text = match.group(1), match.group(3), match.group(4)
-                # Extract the day and month from the date
                 month, day = re.match(r'(\w+) (\d+)', date).groups()
-                # Convert the month name to a month number
                 formatted_month = month_to_number.get(month, month)
-                # Format the date as "DD/MM/YYYY"
                 formatted_date = f"{day}/{formatted_month}/2023"
                 formatted_tweet = f"{formatted_date} {author} tweets \"{full_text}\""
-                if alternative_format:  # If an alternative format is provided, append it to the formatted tweet
+                if alternative_format:
                     formatted_tweet += f", Comment: {alternative_format}"
-                if url:  # If a URL is provided, append it to the formatted tweet
+                if url:
                     formatted_tweet += f", URL: {url}"
                     print("Archiving page....")
                     archived_url = archive_url(url)
                     formatted_tweet += f", Archive: {archived_url}"
                     print("Done!")
+                if is_liked:
+                    formatted_tweet = f"LIKED TWEET {formatted_tweet}"
+                if is_retweeted:
+                    formatted_tweet = f"RETWEET {formatted_tweet}"
                 formatted_tweets.append(formatted_tweet)
         else:
             different_format_data = tweet
-            if alternative_format:  # If an alternative format is provided, append it to the different format data
+            if alternative_format:
                 different_format_data += f", Comment: {alternative_format}"
-            if url:  # If a URL is provided, append it to the different format data
+            if url:
                 different_format_data += f", URL: {url}"
                 print("Archiving page....")
                 archived_url = archive_url(url)
                 different_format_data += f", Archive: {archived_url}"
                 print("Done!")
+            if is_liked:
+                different_format_data = f"LIKED TWEET {different_format_data}"
+            if is_retweeted:
+                different_format_data = f"RETWEET {different_format_data}"
             formatted_tweets.append(different_format_data)
 
     return formatted_tweets
 
-# Uses tkinter to create a GUI to collect tweets, alternative formats, and URLs
+
 root = tk.Tk()
 root.title("Data Entry")
 tweet_entry_label = tk.Label(root, text="Paste tweet content and user name")
@@ -188,20 +197,27 @@ alternative_format_label = tk.Label(root, text="Comment (optional)")
 alternative_format_label.pack()
 alternative_format_entry = tk.Entry(root, width=40)
 alternative_format_entry.pack()
+
+like_checkbox_var = tk.IntVar()
+like_checkbox = tk.Checkbutton(root, text="Like?", variable=like_checkbox_var)
+like_checkbox.pack()
+
+retweet_checkbox_var = tk.IntVar()
+retweet_checkbox = tk.Checkbutton(root, text="Retweet?", variable=retweet_checkbox_var)
+retweet_checkbox.pack()
+
 add_tweet_button = tk.Button(root, text="Add Tweet", command=add_tweet)
 add_tweet_button.pack()
 
-# Place the "Double click to remove entry" label below the listbox
 double_click_label = tk.Label(root, text="Double click to remove entry")
 double_click_label.pack()
 
 tweet_listbox = tk.Listbox(root, height=10, selectmode=tk.SINGLE)
 tweet_listbox.pack()
 
-done_button = tk.Button(root, text="Done", command=done)
+done_button = tk.Button(root, text="Done", command=root.destroy)
 done_button.pack()
 
-# Bind the double-click event to the delete_selected_item function
 tweet_listbox.bind("<Double-Button-1>", delete_selected_item)
 
 root.mainloop()
