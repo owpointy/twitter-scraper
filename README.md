@@ -1,4 +1,4 @@
-Extremely basic tool I made to compile Twitter information faster. Copy and paste from the timeline into the first box. Also handles tweets from links okay, but doesn't see the date unless you copy and paste the date (as shown below). Add URLs and any comments you want to make in the few boxes. Be careful not to just press enter on the dialog box that titles the document because of tkinter spaghetti this can sometimes cancel the whole thing.
+Extremely basic tool I made to compile Twitter information faster. Copy and paste from the timeline into the first box. Also handles tweets from links okay, but doesn't see the date unless you copy and paste the date (as shown below). Add URLs and any comments you want to make in the few boxes. Be careful not to just press enter on the dialog box that titles the document because of tkinter spaghetti this can sometimes cancel the whole thing. Use the development version if you're not scared of things breaking. No guarantees.
 
 ![instructions](https://i.imgur.com/UqXUyUB.png)
 
